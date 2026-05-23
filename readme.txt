@@ -1,6 +1,5 @@
-## Instructions nécessaires pour exécuter l’application
-
-### 1. Prérequis
+ Instructions nécessaires pour exécuter l’application
+1. Prérequis
 
 Avant d’exécuter l’application, assurez-vous d’avoir installé les outils suivants :
 
@@ -8,74 +7,47 @@ Avant d’exécuter l’application, assurez-vous d’avoir installé les outils
 - Maven
 - Node.js
 - npm
-- Expo CLI / Android Studio (émulateur Android)/ web
+- Expo CLI / Android Studio (émulateur Android)
 - MySQL Server
 - Postman (optionnel pour tester l’API)
 
----
-
-### 3. Configuration de la base de données
+ 2. Configuration de la base de données
 
 Créer une base de données MySQL :
 Exécuter le fichier fooddelivery.sql dans MySQL pour créer la base de données de l’application.
 
 Modifier le fichier `application.properties` :
 
-```properties
+
 spring.datasource.url=jdbc:mysql://localhost:3306/fooddelivery
 spring.datasource.username=root
 spring.datasource.password=mot_de_passe
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-```
 
----
 
-### 4. Exécution du Backend (Spring Boot)
+3. Exécution du Backend (Spring Boot)
 
 Accéder au dossier backend :
-cd /food_delivery_app/demo
-
-
+cd demo
 Installer les dépendances Maven :
-
 mvn clean install
-
-
 Lancer le serveur backend :
-
-```bash
 mvn spring-boot:run
-```
-
 Le backend sera accessible sur :
-
-```text
 http://localhost:8080
-```
 
----
 
-### 5. Exécution du Frontend (React Native + Expo)
+4. Exécution du Frontend (React Native + Expo)
 
 Accéder au dossier frontend :
-
-```bash
-cd /food_delivery_app/delivery
-```
-
+cd delivery
 Installer les dépendances :
-
-```bash
 npm install
-```
-
 Lancer le projet Expo :
-
-```bash
 npx expo start
-```
+
 En cas d’exécution de l’application avec un émulateur Android,
 toutes les adresses de l’API utilisées dans le frontend (dossier delivery)
 doivent être remplacées par l’adresse suivante : http://10.0.2.2:8080.
